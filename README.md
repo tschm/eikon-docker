@@ -2,7 +2,6 @@
 
 Use Refinitiv's Python Eikon Data API within a Docker container. The host of this package has to have the Eikon desktop installed.
 
-If you don't 
 ## Installation
 ```python
 pip install eikon-docker
