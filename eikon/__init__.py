@@ -8,11 +8,11 @@ It's usage requires:
     - Eikon Desktop application running on your local machine
 """
 
-# from .Profile import *
-# from .symbology import get_symbology
-# from .json_requests import send_json_request
-# from .news_request import get_news_headlines, get_news_story
-# from .time_series import get_timeseries
-# from .data_grid import get_data, TR_Field
-# from .eikonError import EikonError
-# from .streaming_session import *
+from .Profile import *
+from .symbology import get_symbology
+from .json_requests import send_json_request
+from .news_request import get_news_headlines, get_news_story
+from .time_series import get_timeseries
+from .data_grid import get_data, TR_Field
+from .eikonError import EikonError
+from .streaming_session import *
