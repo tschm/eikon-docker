@@ -1,0 +1,13 @@
+version: '3.6'
+services:
+  sut:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: test
+
+    volumes:
+      - ./eikon:/eikon/eikon:ro
+      - ./test:/eikon/test:ro
+      - ./artifacts:/eikon/artifacts
+      - ./source:/source
