@@ -24,6 +24,3 @@ test:
 tag: test
 	git tag -a ${PROJECT_VERSION} -m "new tag"
 	git push --tags
-
-test:
-	docker-compose -f docker-compose.test.yml run sut
