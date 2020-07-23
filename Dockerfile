@@ -1,4 +1,4 @@
-FROM python:3.7.7-slim-stretch as builder
+FROM python:3.7.7-slim-stretch as eikon
 
 # File Author / Maintainer
 MAINTAINER Thomas Schmelzer "thomas.schmelzer@gmail.com"
@@ -13,10 +13,10 @@ RUN buildDeps='gcc g++' && \
 
 
 #### Here the test-configuration
-FROM builder as test
+FROM eikon as test
 
-RUN pip install --no-cache-dir httpretty pytest pytest-cov pytest-html sphinx requests-mock
+RUN pip install --no-cache-dir pytest pytest-cov pytest-html sphinx requests-mock
 
 WORKDIR /eikon
 
-CMD py.test --cov=eikon  -vv --cov-report html:artifacts/html-coverage --cov-report term --html=artifacts/html-report/report.html /eikon/test
+CMD py.test --cov=eikon  -vv --cov-report html:artifacts/html-coverage --cov-report term --html=artifacts/html-report/report.html test

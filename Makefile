@@ -26,7 +26,5 @@ tag: test
 	git push --tags
 
 
-pypi: tag
-	python setup.py sdist
-	twine check dist/*
-	twine upload dist/*
+test:
+	docker-compose -f docker-compose.test.yml run sut

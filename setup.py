@@ -16,6 +16,7 @@ setup(
     author_email='thomas.schmelzer@gmail.com',
     url='https://github.com/tschm/eikon-docker',
     description='Use the Python Eikon Data API from within a container',
-    install_requires=['requests==2.22.0', 'appdirs==1.4.3','requests-async==0.6.2','websocket-client','deprecation','nest-asyncio==1.0.0','pandas'],
-    license="MIT"
+    install_requires=['requests==2.22.0', 'appdirs==1.4.3', 'requests-async==0.6.2', 'websocket-client', 'deprecation',
+                      'nest-asyncio==1.0.0', 'pandas'],
+    license="Apache 2.0"
 )

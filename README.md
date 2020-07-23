@@ -1,5 +1,5 @@
 # Eikon-docker
-[![CI](https://github.com/tschm/eikon-docker/workflows/CI/badge.svg)](https://github.com/tschm/eikon-docker/actions/)
+[![CI](https://github.com/tschm/eikon-docker/workflows/Test/badge.svg)](https://github.com/tschm/eikon-docker/actions/)
 
 Use Refinitiv's Python Eikon Data API within a Docker container. The host of this package has to have the Eikon desktop installed.
 
