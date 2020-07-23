@@ -18,7 +18,10 @@ help:
 build:
 	docker-compose build eikon
 
-tag:
+test:
+	docker-compose -f docker-compose.test.yml run sut
+
+tag: test
 	git tag -a ${PROJECT_VERSION} -m "new tag"
 	git push --tags
 
