@@ -6,8 +6,16 @@ services:
       dockerfile: Dockerfile
       target: test
 
+
     volumes:
-      - ./eikon:/eikon/eikon:ro
-      - ./test:/eikon/test:ro
-      - ./artifacts:/eikon/artifacts
-      - ./source:/source
+      - /etc/localtime:/etc/localtime:ro
+      - ./pyserver:/${PROJECT}/${PACKAGE}:ro
+      - ./test:/${PROJECT}/test
+      - ./artifacts:/${PROJECT}/artifacts
+
+    command:
+      py.test --cov=/${PROJECT}/${PACKAGE} -vv
+              --cov-report html:/${PROJECT}/artifacts/html-coverage
+              --cov-report term
+              --html=/server/artifacts/html-report/report.html
+              /${PROJECT}/test

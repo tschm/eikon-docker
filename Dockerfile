@@ -1,8 +1,5 @@
 FROM python:3.7.7-slim-stretch as eikon
 
-# File Author / Maintainer
-MAINTAINER Thomas Schmelzer "thomas.schmelzer@gmail.com"
-
 COPY . /tmp/eikon
 
 RUN pip install --no-cache-dir /tmp/eikon && \
@@ -12,7 +9,7 @@ RUN pip install --no-cache-dir /tmp/eikon && \
 #### Here the test-configuration
 FROM eikon as test
 
-RUN pip install --no-cache-dir pytest pytest-cov pytest-html sphinx requests-mock
+RUN pip install --no-cache-dir pytest pytest-cov pytest-html requests-mock
 
 WORKDIR /eikon
 

@@ -16,7 +16,7 @@ help:
 
 
 build:
-	docker-compose build eikon
+	docker-compose build --no-cache eikon
 
 test:
 	docker-compose -f docker-compose.test.yml run sut
