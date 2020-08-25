@@ -5,12 +5,11 @@ COPY . /tmp/eikon
 RUN pip install --no-cache-dir /tmp/eikon && \
     rm -r /tmp/eikon
 
-
 #### Here the test-configuration
 FROM eikon as test
 
-RUN pip install --no-cache-dir pytest pytest-cov pytest-html requests-mock
+COPY ./test /eikon/test
+
+RUN pip install --no-cache-dir -r /eikon/test/requirements.txt
 
 WORKDIR /eikon
-
-CMD py.test --cov=eikon  -vv --cov-report html:artifacts/html-coverage --cov-report term --html=artifacts/html-report/report.html test

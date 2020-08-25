@@ -9,7 +9,7 @@ services:
 
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./pyserver:/${PROJECT}/${PACKAGE}:ro
+      - ./${PACKAGE}:/${PROJECT}/${PACKAGE}:ro
       - ./test:/${PROJECT}/test
       - ./artifacts:/${PROJECT}/artifacts
 
@@ -17,5 +17,5 @@ services:
       py.test --cov=/${PROJECT}/${PACKAGE} -vv
               --cov-report html:/${PROJECT}/artifacts/html-coverage
               --cov-report term
-              --html=/server/artifacts/html-report/report.html
+              --html=/${PROJECT}/artifacts/html-report/report.html
               /${PROJECT}/test
