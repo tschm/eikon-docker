@@ -1,8 +1,5 @@
 #!make
-
-#include eikon/__init__.py
 PROJECT_VERSION := 1.1.2
-PACKAGE := EIKON
 
 .PHONY: help build test tag clean
 
@@ -24,3 +21,6 @@ test:
 tag: test
 	git tag -a ${PROJECT_VERSION} -m "new tag"
 	git push --tags
+
+clean:
+	docker-compose -f docker-compose.test.yml down -v --rmi all --remove-orphans
