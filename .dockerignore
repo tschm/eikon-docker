@@ -7,7 +7,7 @@
 !eikon
 !setup.py
 !README.md
-
+!test
 
 **/__pycache__
 **/*.pyc
