@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.16
-FROM python:3.12-slim AS eikon
+FROM python:3.13-slim AS eikon
 
 # Install uv for fast package management
 COPY --from=ghcr.io/astral-sh/uv:0.7.8 /uv /bin/uv
