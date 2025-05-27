@@ -14,4 +14,3 @@ def read_pd(name, **kwargs):
 def read_json(name):
     with open(resource(name)) as f:
         return json.load(f)
-
