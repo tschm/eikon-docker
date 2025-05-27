@@ -33,4 +33,4 @@ jobs:
       # Run the tests using pytest
       - uses: tschm/cradle/actions/test@v0.1.68
         with:
-          tests-folder: src/tests  # Path to the test files
+          tests-folder: tests  # Path to the test files
