@@ -6,11 +6,7 @@ authors = [{name = "Thomas Schmelzer", email = "thomas.schmelzer@gmail.com"}]
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "appdirs>=1.4.4",
-    "eikon>=1.1.18",
-    "pandas==2.2.3",
-    "requests>=2.32.3",
-    "websocket-client>=1.8.0",
+    "eikon>=1.1.18"
 ]
 
 [project.urls]
