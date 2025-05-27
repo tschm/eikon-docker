@@ -1,4 +1,4 @@
-from eikon.data_grid import get_data_value, get_data_frame
+from eikon.data_grid import get_data_value
 
 
 def test_get_data_value():

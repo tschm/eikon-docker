@@ -1,4 +1,3 @@
-version: '3.6'
 services:
   sut:
     build:
@@ -9,13 +8,12 @@ services:
 
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./${PACKAGE}:/${PROJECT}/${PACKAGE}:ro
-      - ./test:/${PROJECT}/test
-      - ./artifacts:/${PROJECT}/artifacts
+      - ./tests:/app/tests
+      #- ./artifacts:/${PROJECT}/artifacts
 
     command:
-      py.test --cov=/${PROJECT}/${PACKAGE} -vv
-              --cov-report html:/${PROJECT}/artifacts/html-coverage
-              --cov-report term
-              --html=/${PROJECT}/artifacts/html-report/report.html
-              /${PROJECT}/test
+      #py.test #--cov=/app/tests -vv
+              #--cov-report html:/app/artifacts/html-coverage
+              #--cov-report term
+              #--html=/app/artifacts/html-report/report.html
+      pytest /app/tests
