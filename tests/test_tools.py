@@ -1,5 +1,12 @@
 import pytest
-from eikon.tools import check_for_int, check_for_string, is_list_of_string, is_string_type, tz_replacer
+
+from eikon.tools import (
+    check_for_int,
+    check_for_string,
+    is_list_of_string,
+    is_string_type,
+    tz_replacer,
+)
 
 
 def test_check_for_int():
