@@ -4,10 +4,7 @@
 **
 
 !requirements.txt
-!eikon
-!setup.py
-!README.md
-!test
+!tests
 
 **/__pycache__
 **/*.pyc
