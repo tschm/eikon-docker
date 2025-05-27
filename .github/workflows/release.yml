@@ -1,0 +1,50 @@
+# Workflow for creating a new version release and building a Docker image
+# This workflow is manually triggered to create a new version tag and build a Docker image
+
+name: Bump version
+
+# Trigger the workflow manually using the GitHub Actions UI
+on:
+  workflow_dispatch
+
+jobs:
+  # Job to generate a new version tag
+  tagging:
+    permissions:
+      contents: write  # Permission to write to repository contents (create tags)
+    runs-on: ubuntu-latest
+    outputs:
+      new_tag: ${{ steps.tag_version.outputs.new_tag }}  # This will output the tag for other jobs
+    steps:
+      # Generate a new version tag based on semantic versioning
+      - name: Generate Tag
+        id: tag_version
+        uses: tschm/cradle/actions/tag@v0.1.68
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+
+  # Job to build and push a Docker image with the new version tag
+  docker:
+    needs: tagging  # This job depends on the tag job
+    permissions:
+      contents: read  # Permission to read repository contents
+      packages: write  # Permission to write to GitHub Packages
+
+    runs-on: ubuntu-latest
+    steps:
+      # -----------------------------------------------------------------------------
+      # Step 1: Checkout the repository
+      # -----------------------------------------------------------------------------
+      - name: Checkout [${{ github.repository }}]
+        uses: actions/checkout@v4
+
+      # Build and push the Docker image with the new tag
+      - name: Build and Push Docker Image
+        uses: tschm/cradle/actions/docker@v0.1.68
+        with:
+          tag: ${{ needs.tagging.outputs.new_tag }}
+          dockerfiles: 'Dockerfile'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_actor: ${{ github.actor }}
+          github_repository: ${{ github.repository }}
