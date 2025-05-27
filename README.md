@@ -58,10 +58,11 @@ if __name__ == '__main__':
 
 Refinitiv has released the Python Eikon Data API using the Apache 2.0 license. By design this package will only work if installed
 within a container that is running on a host with an Eikon desktop installed. This approach is respected within this package and
-we are essentially using `host.docker.internal` to access services running on the Windows host from within a container. 
+we are essentially using `host.docker.internal` to access services running on the Windows host from within a container.
 This is a somewhat dubious approach and you may want to read more about it here
 
 https://docs.docker.com/docker-for-windows/networking/
 
-Whatever you do with this package note that neither Refinitiv nor myself will be responsible for any damage. Please feel free to raise an issue though.
-
+Whatever you do with this package note that neither Refinitiv
+nor myself will be responsible for any damage.
+Please feel free to raise an issue though.
