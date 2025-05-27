@@ -1,6 +1,0 @@
-services:
-  eikon:
-     build:
-       context: .
-       dockerfile: Dockerfile
-       target: eikon

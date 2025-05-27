@@ -1,25 +1,18 @@
-# Eikon-docker
+# 📊 Eikon-docker
 
 [![Test](https://github.com/tschm/eikon-docker/workflows/Test/badge.svg)](https://github.com/tschm/eikon-docker/actions/)
 [![Release](https://github.com/tschm/eikon-docker/workflows/Release/badge.svg)](https://github.com/tschm/eikon-docker/actions/)
 
-Use Refinitiv's Python Eikon Data API within a Docker container.
+🐳 Use Refinitiv's Python Eikon Data API within a Docker container.
 The host of this package has to have the Eikon desktop installed.
 
-## Installation
+## 💾 Installation
 
 ```python
 pip install eikon-docker
 ```
 
-## Hints
-
-I am using Make throughout all my projects.
-It's not a native Windows tool. You can however make it work following
-
-[eikon](https://gist.github.com/evanwill/0207876c3243bbb6863e65ec5dc3f058)
-
-## Usage
+## 🚀 Usage
 
 I assume you are familiar with docker. If not, this package
 has no additional benefit for you. I recommend to use
@@ -59,7 +52,7 @@ if __name__ == '__main__':
     print(df)
 ```
 
-## License
+## ⚖️ License
 
 Refinitiv has released the Python Eikon Data API using the Apache 2.0 license.
 By design this package will only work if installed

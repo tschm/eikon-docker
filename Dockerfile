@@ -46,12 +46,6 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:7860/ || exit 1
 
 
-#FROM python:3.7.7-slim-stretch as eikon
-
-#COPY . /tmp/eikon
-
-#RUN pip install --no-cache-dir /tmp/eikon && \
-#    rm -r /tmp/eikon
 
 #### Here the test-configuration
 FROM eikon AS test
