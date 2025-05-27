@@ -51,7 +51,7 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           image: tschm/eikon
-          tags: test
+          tags: ${{ needs.tagging.outputs.new_tag }}
           containerfiles: |
             Dockerfile
           extra-args: |
