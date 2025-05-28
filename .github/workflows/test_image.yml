@@ -36,5 +36,5 @@ jobs:
       - name: Run image
         id: test-image
         run: |
-          docker tag localhost/tschm/eikon:test tschm/eikon:test
-          docker run tschm/eikon:test
+          podman tag localhost/tschm/eikon:test tschm/eikon:test
+          podman run tschm/eikon:test
