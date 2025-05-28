@@ -36,4 +36,5 @@ jobs:
       - name: Run image
         id: test-image
         run: |
-          docker run localhost/${{ steps.build-image.outputs.image }}:test
+          docker tag localhost/tschm/eikon:test tschm/eikon:test
+          docker run tschm/eikon:test
