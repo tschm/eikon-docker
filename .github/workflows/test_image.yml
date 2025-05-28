@@ -1,7 +1,6 @@
 name: "TEST IMAGE"
 
-# Continuous Integration workflow for testing the project
-# This workflow ensures the code works across different Python versions
+# Build that test target of the Dockerfile and run it
 
 on:
   push  # Run on every push to the repository

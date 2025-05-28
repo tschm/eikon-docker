@@ -58,4 +58,4 @@ RUN uv pip install --no-cache-dir -r /app/tests/requirements.txt
 
 USER user
 
-CMD pytest /app/tests
+CMD ["pytest", "/app/tests"]
