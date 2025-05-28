@@ -1,6 +1,6 @@
 #!make
 
-.PHONY: help build test tag clean
+.PHONY: help install fmt
 
 .DEFAULT: help
 
