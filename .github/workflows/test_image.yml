@@ -1,0 +1,38 @@
+name: "TEST IMAGE"
+
+# Continuous Integration workflow for testing the project
+# This workflow ensures the code works across different Python versions
+
+on:
+  push  # Run on every push to the repository
+
+
+jobs:
+
+  # Job to build and push a Docker image with the new version tag
+  docker:
+    permissions:
+      contents: read  # Permission to read repository contents
+
+    runs-on: ubuntu-latest
+    steps:
+      # -----------------------------------------------------------------------------
+      # Step 1: Checkout the repository
+      # -----------------------------------------------------------------------------
+      - name: Checkout [${{ github.repository }}]
+        uses: actions/checkout@v4
+
+      - name: Build image
+        id: build-image
+        uses: redhat-actions/buildah-build@v2
+        with:
+          image: tschm/eikon
+          tags: test
+          containerfiles: Dockerfile
+          extra-args: --target test
+          registry: docker.io
+
+      - name: Run image
+        id: test-image
+        run: |
+          podman run tschm/eikon:test
