@@ -22,6 +22,11 @@ jobs:
       - name: Checkout [${{ github.repository }}]
         uses: actions/checkout@v4
 
+
+      #- name: Install podman-docker bridge
+      #  run: |
+      #    sudo apt-get update && sudo apt-get install -y podman-docker
+
       - name: Build image
         id: build-image
         uses: redhat-actions/buildah-build@v2
@@ -36,5 +41,5 @@ jobs:
       - name: Run image
         id: test-image
         run: |
-          podman tag localhost/tschm/eikon:test tschm/eikon:test
+          buildah tag localhost/tschm/eikon:test tschm/eikon:test
           podman run tschm/eikon:test
