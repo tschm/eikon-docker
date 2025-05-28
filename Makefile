@@ -21,14 +21,6 @@ fmt: venv ## Run code formatting and linting
 	@uv run pre-commit install
 	@uv run pre-commit run --all-files
 
-##@ Docker Operations
-
-test: ## Run tests in a Docker container
-	docker-compose -f docker-compose.test.yml run sut
-
-clean: ## Remove all Docker containers, volumes, and images related to the project
-	docker-compose -f docker-compose.test.yml down -v --rmi all --remove-orphans
-
 ##@ Help
 
 help: ## Display this help message
