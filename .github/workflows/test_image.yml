@@ -26,8 +26,8 @@ jobs:
         id: build-image
         uses: redhat-actions/buildah-build@v2
         with:
-          #image: tschm/eikon
-          tags: tschm/eikon:latest
+          image: tschm/eikon
+          tags: test
           containerfiles: |
             Dockerfile
           extra-args: |
@@ -36,4 +36,4 @@ jobs:
       - name: Run image
         id: test-image
         run: |
-          docker run ${{ steps.build-image.outputs.image }}
+          docker run localhost/${{ steps.build-image.outputs.image }}:test
