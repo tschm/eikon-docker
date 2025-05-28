@@ -28,7 +28,7 @@ jobs:
         with:
           image: tschm/eikon
           tags: test
-          containerfiles: Dockerfile
+          containerfiles: docker/Dockerfile
           extra-args: --target test
           registry: docker.io
 
