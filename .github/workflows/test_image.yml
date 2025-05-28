@@ -32,3 +32,8 @@ jobs:
             Dockerfile
           extra-args: |
             --target test
+
+      - name: Run image
+        id: test-image
+        run: |
+          docker run ${{ steps.build-image.outputs.image }}
