@@ -32,9 +32,9 @@ jobs:
             Dockerfile
           extra-args: |
             --target test
+          registry: docker.io
 
       - name: Run image
         id: test-image
         run: |
-          podman tag localhost/tschm/eikon:test tschm/eikon:test
           podman run tschm/eikon:test
