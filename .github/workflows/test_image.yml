@@ -27,7 +27,7 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           image: tschm/eikon
-          tags: test
+          tags: latest
           containerfiles: |
             Dockerfile
           extra-args: |
