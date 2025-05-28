@@ -6,11 +6,8 @@
 🐳 Use Refinitiv's Python Eikon Data API within a Docker container.
 The host of this package has to have the Eikon desktop installed.
 
-## 💾 Installation
-
-```python
-pip install eikon-docker
-```
+I use this project today as playground to test the creation 
+and testing of containers
 
 ## 🚀 Usage
 
