@@ -28,7 +28,7 @@ RUN useradd -m -u 1000 user && mkdir /app && chown user:user /app
 WORKDIR /app
 
 # Copy and install dependencies first for better caching
-COPY --chown=user:user requirements.txt .
+COPY --chown=user:user ../requirements.txt .
 RUN uv pip install --no-cache-dir -r requirements.txt
 
 # Switch to non-root user
@@ -52,7 +52,7 @@ FROM eikon AS test
 
 USER root
 
-COPY --chown=user:user ./tests /app/tests
+COPY --chown=user:user ../tests /app/tests
 
 RUN uv pip install --no-cache-dir -r /app/tests/requirements.txt
 

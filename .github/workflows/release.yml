@@ -53,7 +53,7 @@ jobs:
           image: tschm/eikon
           tags: ${{ needs.tagging.outputs.new_tag }}
           containerfiles: |
-            Dockerfile
+            docker/Dockerfile
           extra-args: |
             --target eikon
 
